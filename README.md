@@ -1,2 +1,2 @@
-# ES6-examples
-ES6 features and examples
+# ES6 Examples
+ES6 features and sample code
