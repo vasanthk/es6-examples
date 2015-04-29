@@ -26,7 +26,9 @@ var users = [
 ];
 
 // ES5
-console.log(users.map(user => user.age));   // [21, 23, 22]
+var ages = console.log(users.map(function (user) {
+    return user.age;
+}));   // [21, 23, 22]
 
 // ES6
 var ages = users.map(user => user.age);
