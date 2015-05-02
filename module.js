@@ -1,5 +1,8 @@
 /**
  * Modules
+ * The ES6 module standard has two parts:
+ * - Declarative syntax (for importing and exporting).
+ * - Programmatic loader API: to configure how modules are loaded and to conditionally load modules.
  *
  * Ref: http://www.2ality.com/2014/09/es6-modules-final.html
  */
