@@ -53,6 +53,31 @@ var diag = require('lib').diag;
 console.log(square(11)); // 121
 console.log(diag(4, 3)); // 5
 
+// 2. DEFAULT EXPORTS (ONE PER MODULE)
+
+// The following ES6 module is a single function
+//------ myFunc.js ------
+export default function () {
+    // Default function
+}
+
+//------ main1.js ------
+import myFunc from 'myFunc';
+myFunc();
+
+// An ES6 module whose default export is a class
+
+//------ MyClass.js ------
+export default class {
+    // Default class
+}
+
+//------ main2.js ------
+import MyClass from 'MyClass';
+let inst = new MyClass();
+
+// Note: The operand of the default export declaration is an expression, it often does not have a name.
+// Instead, it is to be identified via its module’s name.
 
 
 // user.js
