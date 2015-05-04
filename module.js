@@ -80,6 +80,52 @@ let inst = new MyClass();
 // Instead, it is to be identified via its module’s name.
 
 
+// 3. HAVING BOTH NAMED EXPORTS AND DEFAULT EXPORT IN A MODULE
+
+// ES5 - CommonJS
+//------ underscore.js ------
+var _ = function (obj) {
+    // ...
+};
+var each = _.each = _.forEach =
+    function (obj, iterator, context) {
+        // ...
+    };
+module.exports = _;
+
+//------ main.js ------
+var _ = require('underscore');
+var each = _.each;
+
+// ES6
+//------ underscore.js ------
+export default function (obj) {
+    //...
+};
+export function each(obj, iterator, context) {
+    //...
+}
+export { each as forEach };
+
+//------ main.js ------
+import _, { each } from 'underscore';
+
+// The default export is actually just a named export with the special name default.
+// ie, the following two statements are equivalent:
+
+import { default as foo } from 'lib';
+import foo from 'lib';
+
+// Similarly, the following two modules have the same default export:
+
+//------ module1.js ------
+export default 123;
+
+//------ module2.js ------
+const D = 123;
+export { D as default };
+
+
 // user.js
 
 // By default anything you declare in a file in a ES6 project is not available outside that file.
