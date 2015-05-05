@@ -125,6 +125,21 @@ export default 123;
 const D = 123;
 export { D as default };
 
+// CYCLIC DEPENDENCIES IN ES6
+
+// ES6 modules export bindings, not values.ie, the connection to variables declared inside the module body remains live.
+//------ lib.js ------
+export let counter = 0;
+export function inc() {
+    counter++;
+}
+
+//------ main.js ------
+import { inc, counter } from 'lib';
+console.log(counter); // 0
+inc();
+console.log(counter); // 1
+
 
 // user.js
 
