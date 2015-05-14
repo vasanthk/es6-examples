@@ -5,6 +5,14 @@
  * Destructuring is fail-soft, similar to standard object lookup foo["bar"], producing undefined values when not found.
  */
 
+// Destructuring Assignment ES6
+var [x, y, z] = [1, 2, 3];
+// is equivalent to..
+var x = 1, y = 2, z = 3;
+// it even works with nested arrays
+let [x, [y]] = [1, [2]];
+console.log(x, y); // 2, 1
+
 // Array Matching
 // ES5
 var list = [1, 2, 3];
