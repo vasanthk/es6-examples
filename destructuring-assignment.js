@@ -27,6 +27,14 @@ var list = [1, 2, 3];
 var [ a, , b ] = list;
 [b, a] = [a, b];    // Swapping values of variables.
 
+// Object Patterns
+let {a:x, b:y} = {a: 1, b: 2};
+console.log(x, y); // 1, 2
+
+// works with nested objects too
+let {a: x, b: {c, y}} = {a: 1, b: {c: 2}};
+console.log(x, y);// 1, 2
+
 
 // Object Matching, Shorthand Notation
 // ES5
