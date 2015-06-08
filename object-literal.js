@@ -1,4 +1,4 @@
-/** Objext Literal
+/** Object Literal
  * While every object property needs to be either a key-value pair or getter/setter, this may change in the near future.
  * Another syntactic sugar in the upcoming ECMAScript 6 is the object literal property value shorthand.
  * Ref: http://codepen.io/bradleyboy/posts/getting-to-know-es6-object-literals
