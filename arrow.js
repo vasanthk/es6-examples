@@ -5,6 +5,9 @@
  * - Lexical 'this' binding
  * - Shorter syntactical form (() => {} vs. function () {})
  *
+ * Fat arrow functions don't define their own 'this' value, instead they are bound to the lexical 'this' of their current context.
+ * So (x) => this.y * x is effectively the same as function(x) { return this.y * x}.bind(this)
+ *
  * Ref: http://jsrocks.org/2014/10/arrow-functions-and-their-scope/
  */
 
