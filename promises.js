@@ -161,6 +161,13 @@
 
   // Promise.all() takes an array of promises (thenables and other values are converted to promises via Promise.resolve())
   // and, once all of them are fulfilled, it fulfills with an array of their values
+  // Promise.all(iterable): returns a promise that:
+  //  - is fulfilled if all elements in iterable are fulfilled.
+  //  - Fulfillment value: array with fulfillment values.
+  //
+  //  - is rejected if any of the elements are rejected.
+  //  - Rejection value: first rejection value.
+
   Promise.all(promisedTexts)
     .then(function (texts) {
       texts.forEach(function (text) {
@@ -172,7 +179,7 @@
     });
 
   // Promise.race() takes an array of promises (thenables and other values are converted to promises via Promise.resolve()) and returns a promise P.
-  // The first of the input promises that is settled passes its settlement on to the output promise.
+  // Promise.race(iterable): the first element of iterable that is settled is used to settle the returned promise.
   // This example implements a timeout.
   Promise.race([
     httpGet('http://example.com/file.txt'),
