@@ -27,6 +27,8 @@
  *    - Resolving a promise P with a thenable T means that P can’t be resolved anymore and will now follow T’s state, including its fulfillment or rejection value.
  *      The appropriate P reactions will get called once T settles (or are called if T is already settled).
  *
+ *  @Reference: http://www.2ality.com/2014/10/es6-promises-api.html
+ *
  */
 
 (function () {
