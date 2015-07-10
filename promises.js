@@ -36,7 +36,7 @@
   readFilePromisified('config.json')
     .then(function (text) {
       var obj = JSON.parse(text);
-      console.log(JSON.stringify(obnj, null, 4));
+      console.log(JSON.stringify(obj, null, 4));
     })
     .catch(function (reason) {
       console.error('An error occurred', reason);
