@@ -64,7 +64,7 @@
   );
 
   //Perform HTTP get using promise
-  function htpGet(url) {
+  function httpGet(url) {
     return new Promise(
       function (resolve, reject) {
         var request = new XMLHttprequest();
