@@ -41,6 +41,7 @@
       console.log(JSON.stringify(obj, null, 4));
     })
     .catch(function (reason) {
+      // Flow of control get shere if there was any error thrown in the then() -- not readFilePromisified
       console.error('An error occurred', reason);
     });
 
@@ -61,7 +62,7 @@
       // fulfillment
     },
     function (reason) {
-
+      // rejection
     }
   );
 
@@ -70,7 +71,7 @@
     return new Promise(
       function (resolve, reject) {
         var request = new XMLHttprequest();
-        request.onreadystatchange = function () {
+        request.onreadystatechange = function () {
           if (this.status === 200) {
             // Success
             resolve(this.response);
