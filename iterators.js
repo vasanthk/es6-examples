@@ -20,6 +20,8 @@
  * The done property signals when the iterator has been exhausted and no more values are available.
  *
  * String, Array, TypedArray, Map and Set are all built-in iterables, because the prototype objects of them all have a Symbol.iterator method.
+ * The iterator completion value (when done: true) is usually ignored by iterable consumers.
+ * Several built-ins that you usually feed arrays to actually accept any iterable object (for-of, Array.from, yield*, [a, b, ...rest] = iterable);
  *
  * @Reference:
  * http://jsrocks.org/2015/09/javascript-iterables-and-iterators/
