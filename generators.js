@@ -61,3 +61,20 @@ for (let [key, value] of objectEntries(jane)) {
 // Output:
 // first: Jane
 // last: Doe
+
+/**
+ * Generators with Promises for asynchrony
+ * From Talk:
+ * Callback-less Asynchrony: ES6, Generators, and the next wave of JavaScript development
+ * https://www.youtube.com/watch?v=3UKsXCMK6Iw
+ */
+// This function basically returns only after the async operations are complete.
+function *run() {
+  var cities = ['Chicago', 'San Francisco', 'Los Angeles', 'Santa Barbara'];
+
+  var citiesData = cities.map(city => {
+    asyncQueryFn(city);
+  });
+
+  return yield Promise.all(citiesData);
+}
