@@ -6,6 +6,7 @@
  * https://davidwalsh.name/async-generators
  * https://www.youtube.com/watch?v=QO07THdLWQo
  * https://www.youtube.com/watch?v=3UKsXCMK6Iw
+ * http://www.dotnetcurry.com/javascript/1131/ecmascript6-async-using-generators-promises
  */
 
 /**
