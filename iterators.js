@@ -112,4 +112,36 @@ for (let x of iterator) {
   console.log(x); // b
 }
 
+/**
+ * Built-in iterables
+ * for-of loop takes advantage of the iterable pattern.
+ *
+ * @Reference: http://ruben-cordeiro.com/es6-overview-iterators/
+ */
+
+// Array
+let arr = [1, 2, 3, 4];
+for (let value of arr) {
+  console.log(value);
+}
+
+// String
+let blogPostName = 'ES6 overview: Iterables';
+for (let character of blogPostName) {
+  console.log(character);
+}
+
+// Set
+let words = ['Call', 'me', 'maybe', 'maybe'];
+let uniqueWords = new Set(words);
+for (let word of uniqueWords) {
+  console.log(word);
+}
+
+// Map
+let kvArray = [['Sachin', 1], ['ABD', 2]];
+let rankings = new Map(kvArray);
+for (let [player, rank] of rankings) {
+  console.log(player, ': ', rank);
+}
 
