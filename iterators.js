@@ -82,9 +82,9 @@ function iterateOver(...args) {
     },
     next() {
       if (index < args.length) {
-        return { value: args[index++] };
+        return {value: args[index++]};
       } else {
-        return { done: true };
+        return {done: true};
       }
     }
   };
@@ -145,3 +145,56 @@ for (let [player, rank] of rankings) {
   console.log(player, ': ', rank);
 }
 
+/**
+ * Other language constructs that take advantage of iterables
+ */
+
+// Destructuring assignment
+let arr = ["One", "Two", "Three", "Four"];
+
+// without destructuring
+let one = arr[0];
+let two = arr[1];
+let three = arr[2];
+
+// with destructuring
+let [one, two, three] = arr;
+
+// This syntax is also valid for iterables other than arrays:
+let names = new Set(["Ruben", "Duarte", "Hugo", "Henrique"]);
+let [first, ...rest] = names;
+// first = "Ruben"; rest = ["Duarte", "Hugo", "Henrique"];
+
+
+// Spread
+// The spread operator inserts the values of an iterable into an array:
+let arr = [1, 2, 3];
+let composedArray = [1, 2, ...arr, 4];
+console.log(composedArray); // [1, 2, 1, 2, 3, 4]
+
+// One of the main use case for this operator is the conversion of any iterable to an array in a compact fashion:
+let iterable = new Set().add("Ruben").add("Henrique").add("Duarte");
+let arr = [...iterable];
+
+
+/**
+ * Implementing Fibonacci using iterables
+ */
+
+let fibonacci = {
+  [Symbol.iterator]() {
+    let pre = 0, cur = 1;
+    return {
+      next () {
+        [ pre, cur ] = [cur, pre + cur];
+        return {done: false, value: cur};
+      }
+    };
+  }
+};
+
+for (let n of fibonacci) { // internally, next() is called for each iteration
+  if (n > 1000)
+    break;
+  console.log(n);
+}
